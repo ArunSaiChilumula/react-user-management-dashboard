@@ -1,0 +1,3 @@
+`apiClient.js` configures the shared Axios client for JSONPlaceholder. Resource-specific request functions live in `usersService.js`, `postsService.js`, and `productsService.js`; pages and components call those functions rather than making HTTP requests directly. The products service uses the same Axios client with absolute DummyJSON URLs.
+
+Posts are updated in page state after successful requests. JSONPlaceholder simulates writes and does not persist them across a reload; posts created in the current session are therefore edited and deleted locally because their simulated IDs cannot be addressed by follow-up write requests.
